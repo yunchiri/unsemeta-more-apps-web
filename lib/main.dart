@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:more_app_web/info_view.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'UnseMeta More Apps',
+      title: 'Okfastgo More Apps',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -50,10 +50,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  List<String> get urls => const [
-        'https://play.google.com/store/apps/details?id=com.unsemeta.family',
-        'https://apps.apple.com/us/app/%EA%B0%80%EC%A1%B1-%EC%9A%B4%EC%84%B8/id1596208546',
-      ];
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -65,49 +61,34 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
         backgroundColor: Colors.white,
         body: ListView(
-          children: [
-            Image.asset(
-              'res/icon.png',
-              width: MediaQuery.of(context).size.width,
+          children: const [
+            InfoView(
+              introText:
+                  "국내 최다 40개 사이트 지원\n댓글, 감정 리액션 ,썸네일 지원\n사이트별 알람지원\n좋아! 빠르게 가!",
+              imagePath: 'res/okfastgo.png',
+              aosPath:
+                  'https://play.google.com/store/apps/details?id=com.okfastgo.best',
+              iosPath:
+                  'https://apps.apple.com/mn/app/%EC%A2%8B%EB%B9%A0%EA%B0%80/id1614208654',
             ),
-            const SizedBox(
-              height: 50,
+            InfoView(
+              introText:
+                  "주식 코인 부동산 인간지표글만 따로 모았습니다!\n 신한은행 VIP담당자도 쓰는 재테크 인간지표",
+              imagePath: 'res/indicator.png',
+              aosPath:
+                  'https://play.google.com/store/apps/details?id=com.okfastgo.humanindicator',
             ),
-            Text("우리 가족의 오늘, 내일운세를\n한눈에 쉽게 볼수 있습니다",
-                textAlign: TextAlign.center,
-                style: GoogleFonts.nanumMyeongjo(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 30,
-                    color: Colors.grey[800])),
-            const SizedBox(
-              height: 50,
+            InfoView(
+              introText: "전 세계는 지금 어떤일이 일어나고 있을까요?\n뉴스보다 더 생생한 소식",
+              imagePath: 'res/world.png',
+              aosPath:
+                  'https://play.google.com/store/apps/details?id=com.okfastgo.world',
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                GestureDetector(
-                  onTap: () async {
-                    await launch(
-                        'https://play.google.com/store/apps/details?id=com.unsemeta.family');
-                  },
-                  child: Image.asset(
-                    'google-play-badge-KR.png',
-                    width: 140,
-                    height: 40,
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () async {
-                    await launch(
-                        'https://apps.apple.com/kr/app/%EA%B0%80%EC%A1%B1-%EC%9A%B4%EC%84%B8/id1596208546');
-                  },
-                  child: Image.asset(
-                    'App_Store_Badge_KR.png',
-                    width: 140,
-                    height: 40,
-                  ),
-                ),
-              ],
+            InfoView(
+              introText: "오늘 하루의 운세를 감정과 점수로 쉽게 보여드려요",
+              imagePath: 'res/family.png',
+              aosPath:
+                  'https://play.google.com/store/apps/details?id=com.unsemeta.family',
             )
           ],
         ));
