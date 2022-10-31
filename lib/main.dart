@@ -64,8 +64,8 @@ class _MyHomePageState extends State<MyHomePage> {
           children: const [
             InfoView(
               introText:
-                  "국내 최다 40개 사이트 지원\n댓글, 감정 리액션 ,썸네일 지원\n사이트별 알람지원\n좋아! 빠르게 가!",
-              imagePath: 'res/okfastgo.png',
+                  "국내 최다 44개 사이트 지원\n댓글, 감정 리액션 ,썸네일 지원\n사이트별 알람지원\n좋아! 빠르게 가!",
+              imagePath: 'res/nuntingkorea.png',
               aosPath:
                   'https://play.google.com/store/apps/details?id=com.okfastgo.best',
               iosPath:
